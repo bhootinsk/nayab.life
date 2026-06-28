@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>&copy; <%= new Date().getFullYear() %> <%= site.owner %>. All rights reserved. · <a href="https://nayab.life">nayab.life</a></p>
+    <p>&copy; <%= new Date().getFullYear() %> <%= site.owner %>. All rights reserved.<% if (site.sisterSiteUrl && site.sisterSiteLabel) { %> · <a href="<%= site.sisterSiteUrl %>"><%= site.sisterSiteLabel %></a><% } %></p>
   </div>
 </footer>
 <script src="/js/main.js" defer></script>
