@@ -1,22 +1,25 @@
 :root {
-  --color-bg: #f0f7f4;
-  --color-bg-alt: #e3f0ea;
+  --color-bg: #faf8fc;
+  --color-bg-alt: #f0eaf8;
   --color-surface: #ffffff;
-  --color-text: #142820;
-  --color-muted: #4a6358;
-  --color-accent: #1a6b5c;
-  --color-accent-deep: #0f4539;
-  --color-accent-light: #2d9a82;
-  --color-violet: #6b4a8a;
-  --color-teal: #2a7a8a;
-  --color-gold: #c49a3c;
-  --color-coral: #c45a4a;
-  --gradient-hero: linear-gradient(135deg, #e8f5f0 0%, #d4ebe3 35%, #f5ebe0 70%, #e8eef5 100%);
-  --gradient-cta: linear-gradient(120deg, #0f4539 0%, #1a6b5c 40%, #2a7a8a 100%);
+  --color-text: #2a3d5c;
+  --color-muted: #6e6885;
+  --color-accent: #7d6b9e;
+  --color-accent-deep: #4f4268;
+  --color-accent-light: #a898c8;
+  --color-violet: #9b84b8;
+  --color-teal: #6b8eb8;
+  --color-gold: #e8c86a;
+  --color-coral: #d48a8a;
+  --color-accent-rgb: 125, 107, 158;
+  --color-text-rgb: 42, 61, 92;
+  --color-deep-rgb: 79, 66, 104;
+  --gradient-hero: linear-gradient(135deg, #f5f0fa 0%, #ebe4f8 35%, #f8f0e8 70%, #e8eef8 100%);
+  --gradient-cta: linear-gradient(120deg, #4f4268 0%, #7d6b9e 40%, #6b8eb8 100%);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Outfit", system-ui, sans-serif;
-  --shadow: 0 16px 48px rgba(20, 40, 32, 0.12);
-  --shadow-soft: 0 8px 24px rgba(20, 40, 32, 0.08);
+  --shadow: 0 16px 48px rgba(var(--color-text-rgb), 0.12);
+  --shadow-soft: 0 8px 24px rgba(var(--color-text-rgb), 0.08);
   --radius: 16px;
   --max: 1140px;
 }
@@ -78,8 +81,8 @@ a:hover {
   z-index: 100;
   background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(26, 107, 92, 0.12);
-  box-shadow: 0 2px 20px rgba(20, 40, 32, 0.04);
+  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.12);
+  box-shadow: 0 2px 20px rgba(var(--color-text-rgb), 0.04);
 }
 
 .header-inner {
@@ -149,7 +152,7 @@ a:hover {
   border-radius: 999px;
   background: var(--gradient-cta);
   color: #fff !important;
-  box-shadow: 0 4px 16px rgba(26, 107, 92, 0.35);
+  box-shadow: 0 4px 16px rgba(var(--color-accent-rgb), 0.35);
 }
 
 .nav-cta:hover {
@@ -187,7 +190,7 @@ a:hover {
   inset: 0;
   background:
     radial-gradient(ellipse 70% 50% at 85% 15%, rgba(107, 74, 138, 0.15), transparent),
-    radial-gradient(ellipse 60% 50% at 5% 90%, rgba(26, 107, 92, 0.2), transparent);
+    radial-gradient(ellipse 60% 50% at 5% 90%, rgba(var(--color-accent-rgb), 0.2), transparent);
   pointer-events: none;
 }
 
@@ -201,7 +204,7 @@ a:hover {
 .shape-1 {
   width: 280px;
   height: 280px;
-  background: #a8e6cf;
+  background: #dcc8f0;
   top: 10%;
   right: 5%;
 }
@@ -209,7 +212,7 @@ a:hover {
 .shape-2 {
   width: 200px;
   height: 200px;
-  background: #d4b8e8;
+  background: #c8d8f0;
   bottom: 20%;
   left: 40%;
 }
@@ -291,7 +294,7 @@ a:hover {
   padding: 0.75rem 1rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
-  border: 1px solid rgba(26, 107, 92, 0.15);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
 }
 
 .hero-stats strong {
@@ -309,11 +312,11 @@ a:hover {
   display: inline-block;
   max-width: 100%;
   padding: 6px;
-  border: 2px solid rgba(26, 107, 92, 0.22);
+  border: 2px solid rgba(var(--color-accent-rgb), 0.22);
   border-radius: 20px;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.85) 0%, rgba(232, 245, 240, 0.75) 100%);
   box-shadow:
-    0 4px 24px rgba(26, 107, 92, 0.1),
+    0 4px 24px rgba(var(--color-accent-rgb), 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.6) inset;
   line-height: 0;
 }
@@ -347,7 +350,7 @@ a:hover {
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
   background: var(--color-surface);
-  border: 1px solid rgba(26, 107, 92, 0.2);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.2);
   color: var(--color-accent-deep);
   font-weight: 500;
   box-shadow: var(--shadow-soft);
@@ -412,17 +415,17 @@ a:hover {
 .pillar-card--sage .pillar-overlay {
   background: linear-gradient(
     180deg,
-    rgba(20, 40, 32, 0.05) 0%,
-    rgba(20, 40, 32, 0.15) 40%,
-    rgba(26, 107, 92, 0.84) 100%
+    rgba(var(--color-text-rgb), 0.05) 0%,
+    rgba(var(--color-text-rgb), 0.15) 40%,
+    rgba(var(--color-accent-rgb), 0.84) 100%
   );
 }
 
 .pillar-card--lavender .pillar-overlay {
   background: linear-gradient(
     180deg,
-    rgba(20, 40, 32, 0.05) 0%,
-    rgba(20, 40, 32, 0.12) 38%,
+    rgba(var(--color-text-rgb), 0.05) 0%,
+    rgba(var(--color-text-rgb), 0.12) 38%,
     rgba(107, 74, 138, 0.86) 100%
   );
 }
@@ -430,8 +433,8 @@ a:hover {
 .pillar-card--peach .pillar-overlay {
   background: linear-gradient(
     180deg,
-    rgba(20, 40, 32, 0.05) 0%,
-    rgba(20, 40, 32, 0.1) 36%,
+    rgba(var(--color-text-rgb), 0.05) 0%,
+    rgba(var(--color-text-rgb), 0.1) 36%,
     rgba(196, 90, 74, 0.86) 100%
   );
 }
@@ -494,13 +497,13 @@ a:hover {
 .btn-primary {
   background: var(--gradient-cta);
   color: #fff !important;
-  box-shadow: 0 6px 20px rgba(26, 107, 92, 0.4);
+  box-shadow: 0 6px 20px rgba(var(--color-accent-rgb), 0.4);
 }
 
 .btn-glass {
   background: rgba(255, 255, 255, 0.85);
   color: var(--color-accent-deep) !important;
-  border-color: rgba(26, 107, 92, 0.25);
+  border-color: rgba(var(--color-accent-rgb), 0.25);
 }
 
 .btn-outline {
@@ -613,7 +616,7 @@ a:hover {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(26, 107, 92, 0.1);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -632,7 +635,7 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 35%, rgba(15, 69, 57, 0.55) 100%);
+  background: linear-gradient(180deg, transparent 35%, rgba(var(--color-deep-rgb), 0.55) 100%);
   pointer-events: none;
   opacity: 0.85;
   transition: opacity 0.3s ease;
@@ -781,7 +784,7 @@ a:hover {
 .post-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent 50%, rgba(15, 69, 57, 0.35));
+  background: linear-gradient(transparent 50%, rgba(var(--color-deep-rgb), 0.35));
   pointer-events: none;
 }
 
@@ -838,7 +841,7 @@ a:hover {
 .page-banner-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(15, 69, 57, 0.92) 0%, rgba(26, 107, 92, 0.75) 45%, rgba(107, 74, 138, 0.5) 100%);
+  background: linear-gradient(105deg, rgba(var(--color-deep-rgb), 0.92) 0%, rgba(var(--color-accent-rgb), 0.75) 45%, rgba(107, 74, 138, 0.5) 100%);
 }
 
 .page-banner-content {
@@ -971,7 +974,7 @@ a:hover {
   background: var(--color-surface);
   padding: 1.25rem 1.5rem;
   border-radius: var(--radius);
-  border: 1px solid rgba(26, 107, 92, 0.12);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.12);
   margin-bottom: 1rem;
   box-shadow: var(--shadow-soft);
 }
@@ -988,7 +991,7 @@ a:hover {
 }
 
 .accent-card {
-  background: linear-gradient(160deg, #e8f5f0, #f5ebe8);
+  background: linear-gradient(160deg, #f0eaf8, #f8f0e8);
 }
 
 .accent-card p {
@@ -1021,7 +1024,7 @@ a:hover {
   width: 100%;
   margin-top: 0.35rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid rgba(26, 107, 92, 0.2);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.2);
   border-radius: 10px;
   font: inherit;
   background: var(--color-surface);
@@ -1040,8 +1043,8 @@ a:hover {
 }
 
 .alert-success {
-  background: #d4f0e4;
-  color: #0f4539;
+  background: #ebe4f8;
+  color: var(--color-accent-deep);
 }
 
 .post-meta {
@@ -1133,7 +1136,7 @@ a:hover {
 
 /* Footer */
 .site-footer {
-  background: linear-gradient(180deg, #142820 0%, #0a1812 100%);
+  background: linear-gradient(180deg, #2c2445 0%, #1a1528 100%);
   color: rgba(255, 255, 255, 0.88);
   padding: 3rem 0 0;
   margin-top: 0;
@@ -1153,7 +1156,7 @@ a:hover {
 .footer-grid h4 {
   font-family: var(--font-display);
   margin: 0 0 0.75rem;
-  color: #a8e6cf;
+  color: #dcc8f0;
 }
 
 .footer-grid ul {
@@ -1214,7 +1217,7 @@ a:hover {
     flex-direction: column;
     background: #fff;
     padding: 1rem;
-    border-bottom: 1px solid rgba(26, 107, 92, 0.15);
+    border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.15);
     box-shadow: var(--shadow-soft);
   }
 
@@ -1280,7 +1283,7 @@ a:hover {
 
 .promo-card-vertical .promo-img {
   object-fit: contain;
-  background: linear-gradient(160deg, #f3e8ff, #e8f5f0);
+  background: linear-gradient(160deg, #f3e8ff, #f0eaf8);
 }
 
 .promo-icons {
@@ -1360,7 +1363,7 @@ a:hover {
   background: var(--color-bg);
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid rgba(26, 107, 92, 0.12);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.12);
   box-shadow: var(--shadow-soft);
 }
 
@@ -1368,7 +1371,7 @@ a:hover {
   width: 100%;
   display: block;
   aspect-ratio: 16/9;
-  background: #0a1812;
+  background: #1a1528;
   vertical-align: middle;
 }
 

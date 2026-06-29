@@ -1,33 +1,41 @@
 {
   "name": "nayab-life",
-  "version": "1.0.0",
-  "description": "Nayab Tahir — psychotherapy blog and news at nayab.life",
-  "main": "app.js",
+  "version": "2.0.0",
+  "private": true,
+  "description": "nayab.life monorepo — Next.js frontend + NestJS backend",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "start": "node app.js",
-    "dev": "node --watch app.js",
-    "build:reel": "node scripts/build-reel-clip3.js"
+    "dev": "concurrently -n api,web -c green,blue \"npm run dev -w @nayab/api\" \"npm run dev -w @nayab/web\"",
+    "dev:api": "npm run dev -w @nayab/api",
+    "dev:web": "npm run dev -w @nayab/web",
+    "build": "npm run build -w @nayab/shared && npm run build -w @nayab/api && npm run sync:public && npm run build -w @nayab/web",
+    "predev": "npm run build -w @nayab/shared",
+    "build:api": "npm run build -w @nayab/api",
+    "build:web": "npm run build -w @nayab/web",
+    "start:api": "npm run start:prod -w @nayab/api",
+    "start:web": "npm run start -w @nayab/web",
+    "legacy:start": "node app.js",
+    "build:reel": "node scripts/build-reel-clip3.js",
+    "sync:public": "node scripts/sync-public-to-web.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.6.1",
+    "ejs": "^3.1.10",
+    "express": "^4.22.2",
+    "express-session": "^1.19.0",
+    "marked": "^15.0.12",
+    "multer": "^1.4.5-lts.1",
+    "slugify": "^1.6.9",
+    "uuid": "^11.1.1"
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "keywords": [
-    "psychotherapy",
-    "nayab-tahir",
-    "blog"
-  ],
-  "author": "Nayab Tahir",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^16.4.7",
-    "ejs": "^3.1.10",
-    "express": "^4.21.2",
-    "express-session": "^1.18.1",
-    "marked": "^15.0.7",
-    "multer": "^1.4.5-lts.1",
-    "slugify": "^1.6.6",
-    "uuid": "^11.0.5"
   }
 }

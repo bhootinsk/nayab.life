@@ -2,7 +2,7 @@
 setlocal
 set ROOT=%~dp0..
 set SRC=%ROOT%\temp\videos\clip-3.mp4
-set OUTDIR=%ROOT%\public\media\reels
+set OUTDIR=%ROOT%\temp\reels
 set WORK=%ROOT%\temp\reel-build
 set FONT=C:/Windows/Fonts/arial.ttf
 set FONTB=C:/Windows/Fonts/arialbd.ttf
